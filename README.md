@@ -9,7 +9,7 @@ Playgrounding with Kafka (and general application) design patterns
 docker-compose up
 ```
 
-### Services
+## Services
 
 |   Service     |   Port    |
 |---            |---        |
@@ -18,12 +18,20 @@ docker-compose up
 |   ui          |   3000    |
 |   kafka       |   9092    |
 
-### Topics
+### Api
+
+### Database
+
+### UI
+
+### Kafka
+
+#### Topics
 
 - source-topic
 - success-topic
 
-### Kafkacat
+#### Using Kafkacat
 
 Producing
 
