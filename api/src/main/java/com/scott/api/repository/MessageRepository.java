@@ -9,6 +9,4 @@ public interface MessageRepository extends PagingAndSortingRepository<Message, L
 
     Message findById(String id);
     Page<Message> findAll(Pageable pageable);
-
-//    https://www.baeldung.com/spring-data-jpa-pagination-sorting
 }

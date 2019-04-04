@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Slf4j
 @Service
 public class MessageService {
 
@@ -23,7 +22,6 @@ public class MessageService {
 
     public Message getMessage(String id) {
         Message message = messageRepository.findById(id);
-        System.out.println(message);
         return message;
     }
 
