@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+jobs:
+  message:
+    name: messageJob
+    schedule: 5
+    description: "Creates a message"
+    topic: source-topic
+
+
+

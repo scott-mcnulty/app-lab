@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'com.scott.kafka.design.patterns'
+version '0.0.1'
+
+dependencies {
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-quartz', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+
+    compile group: 'org.springframework.kafka', name: 'spring-kafka', version: springKafkaVersion
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+}
