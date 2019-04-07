@@ -1,9 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 plugins {
     id 'java'
 }
 
-group 'com.scott.kafka.design.patterns'
-version '0.0.1'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
 
@@ -18,14 +30,9 @@ dependencies {
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+    testCompile group: 'junit', name: 'junit', version: junitVersion
 }
 
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: junitVersion
-}

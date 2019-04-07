@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   application:
     name: api
   datasource:
@@ -28,3 +30,12 @@ management:
     export:
       prometheus:
         enabled: true
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:postgresql://db:5432/default
+    username: user
+    password: password
