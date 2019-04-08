@@ -28,4 +28,12 @@ public class MessageService {
     public Message createMessage(Message message) {
         return messageRepository.save(message);
     }
+
+    public Message createMessage(String message) {
+        Message newMessage = Message.builder()
+                .message(message)
+                .build();
+        return messageRepository.save(newMessage);
+    }
+
 }

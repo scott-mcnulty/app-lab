@@ -28,5 +28,10 @@ public class MessageController {
     public ResponseEntity createMesasge(@RequestBody Message message) {
         return ResponseEntity.ok(messageService.createMessage(message));
     }
+
+    @PostMapping
+    public ResponseEntity createMesasge(@RequestBody String message) {
+        return ResponseEntity.ok(messageService.createMessage(message));
+    }
 }
 
