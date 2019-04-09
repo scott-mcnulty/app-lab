@@ -1,7 +1,6 @@
-# kafka-design-patterns
+# app-labs
 
-Playgrounding with Kafka (and general application) design patterns
-
+Playgrounding with applications and design patterns
 
 ## Running
 
