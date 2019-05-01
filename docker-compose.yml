@@ -22,6 +22,12 @@ services:
       ENVIRONMENT: "dev"
     depends_on:
       - db
+    limits:
+      cpus: '0.50'
+      memory: 1000M
+    reservations:
+      cpus: '0.25'
+      memory: 500M
 
   source-producer:
     build:
@@ -32,6 +38,12 @@ services:
       ENVIRONMENT: "dev"
     depends_on:
       - kafka
+    limits:
+      cpus: '0.50'
+      memory: 1000M
+    reservations:
+      cpus: '0.25'
+      memory: 500M
 
   # processor:
   #   build:
@@ -44,6 +56,12 @@ services:
   #   depends_on:
   #     - kafka
   #     - api
+  #   limits:
+  #     cpus: '0.50'
+  #     memory: 1000M
+  #   reservations:
+  #     cpus: '0.25'
+  #     memory: 500M
 
   adminer:
     image: adminer
