@@ -21,8 +21,7 @@ public class MessageService {
     }
 
     public Message getMessage(String id) {
-        Message message = messageRepository.findById(id);
-        return message;
+        return messageRepository.findById(id);
     }
 
     public Message createMessage(Message message) {
