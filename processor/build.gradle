@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBootVersion
+    compile group: 'org.springframework.kafka', name: 'spring-kafka', version: springKafkaVersion
+
+    compile group: 'io.micrometer', name: 'micrometer-core', version: micrometerVersion
+    compile group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: micrometerVersion
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+}
+
+sourceCompatibility = 1.8

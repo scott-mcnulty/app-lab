@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: local
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  port: 9000
+
+# Metrics related configurations
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+processor:
+  kafka:
+    source-consumer:
+      topic: source-topic
+      id: source-consumer
+    dlt-consumer:
+      topic: dead-letter-topic
+      id: dead-letter-consumer
+  api:
+    scheme: "http"
+    host: "localhost"
+    port: "8080"
+    messages-endpoint: "messages"
+
+---
+
+spring:
+  profiles: dev
+  kafka:
+    bootstrap-servers:
+      - kafka:9092
+
+processor:
+  api:
+    domain: "api"
